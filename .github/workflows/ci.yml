@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, main]
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+  pull_request:
+    branches: [dev, main]
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    env:
+      NEXT_PUBLIC_DIETITIAN_API_URL: ${{ secrets.NEXT_PUBLIC_DIETITIAN_API_URL }}
+      NEXT_PUBLIC_SEARCH_FOODS_API_URL: ${{ secrets.NEXT_PUBLIC_SEARCH_FOODS_API_URL }}
+      NEXT_PUBLIC_FINANCES_API_URL: ${{ secrets.NEXT_PUBLIC_FINANCES_API_URL }}
+      NEXT_PUBLIC_IBGE_API_URL: ${{ secrets.NEXT_PUBLIC_IBGE_API_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.4.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Build
+        env:
+          APP_ENV: production
+        run: pnpm build

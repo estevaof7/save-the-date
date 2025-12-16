@@ -1,0 +1,7 @@
+services:
+  dietitian-web:
+    container_name: dietitian-web
+    build:
+      context: .
+    ports:
+      - ${PORT}:${PORT}
