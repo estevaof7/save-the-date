@@ -130,7 +130,7 @@ export const MyLine = () => {
         />
         <PhotoCard
           title="18.08.2024"
-          image="/img/cards/caverna.jpg"
+          image="/img/cards/caverna.png"
           description="O interesse começa..."
           left={30}
           top={800}
@@ -141,7 +141,7 @@ export const MyLine = () => {
         />
         <PhotoCard
           title="18.08.2024"
-          image="/img/cards/vozzuca.jpg"
+          image="/img/cards/vozzuca.png"
           description="Nosso primiro café juntos"
           left={95}
           top={1410}
@@ -152,7 +152,7 @@ export const MyLine = () => {
         />
         <PhotoCard
           title="21.12.2024"
-          image="/img/cards/namoro.jpg"
+          image="/img/cards/pedido-namoro.png"
           description="Pedido de namoro"
           left={30}
           top={2000}
@@ -163,7 +163,7 @@ export const MyLine = () => {
         />
         <PhotoCard
           title="20.07.2025"
-          image="/img/cards/pedido-card.jpg"
+          image="/img/cards/pedido-casamento.png"
           description="Pedido de casamento"
           left={95}
           top={2590}
@@ -174,7 +174,7 @@ export const MyLine = () => {
         />
         <PhotoCard
           title="20.07.2025"
-          image="/img/cards/pedido-card.jpg"
+          image="/img/cards/pedido-casamento.png"
           description="Pedido de casamento"
           left={30}
           top={3190}
