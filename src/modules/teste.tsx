@@ -119,7 +119,7 @@ export const MyLine = () => {
       <div className="relative -m-2">
         <PhotoCard
           title="31.01.2024"
-          image="/img/cards/bereal.png"
+          image="/img/cards/bereal-2.png"
           description="Nossa primeira foto juntos"
           left={150}
           top={150}
