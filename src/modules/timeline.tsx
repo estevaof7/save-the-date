@@ -116,7 +116,7 @@ export const MyLine = () => {
 
   return (
     <div className="overflow-hidden">
-      <div className="relative -m-2">
+      <div className="width-[390px] relative mx-auto -mt-2 max-w-[390px] overflow-hidden">
         <PhotoCard
           title="31.01.2024"
           image="/img/cards/bereal-2.png"
@@ -133,7 +133,7 @@ export const MyLine = () => {
           image="/img/cards/caverna.png"
           description="O interesse começa..."
           left={30}
-          top={800}
+          top={760}
           photoWidth={280}
           photoHeight={200}
           ref={photoCardRef2}
@@ -144,7 +144,7 @@ export const MyLine = () => {
           image="/img/cards/vozzuca.png"
           description="Nosso primiro café juntos"
           left={95}
-          top={1410}
+          top={1360}
           photoWidth={280}
           photoHeight={200}
           ref={photoCardRef3}
@@ -155,7 +155,7 @@ export const MyLine = () => {
           image="/img/cards/pedido-namoro.png"
           description="Pedido de namoro"
           left={30}
-          top={2000}
+          top={1900}
           photoWidth={280}
           photoHeight={200}
           ref={photoCardRef4}
@@ -166,7 +166,7 @@ export const MyLine = () => {
           image="/img/cards/pedido-casamento.png"
           description="Pedido de casamento"
           left={95}
-          top={2590}
+          top={2480}
           photoWidth={280}
           photoHeight={200}
           ref={photoCardRef5}
@@ -177,7 +177,7 @@ export const MyLine = () => {
           image="/img/cards/pedido-casamento.png"
           description="Pedido de casamento"
           left={30}
-          top={3190}
+          top={3050}
           photoWidth={280}
           photoHeight={200}
           ref={photoCardRef6}
@@ -186,7 +186,7 @@ export const MyLine = () => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 700 6160"
-          className="max-w-[600px] overflow-visible"
+          className="overflow-visible"
           id="svg-stage"
         >
           {/* viewBox

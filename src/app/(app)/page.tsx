@@ -1,9 +1,10 @@
-import { TesteParallax } from "@/modules/teste-parallax";
+import { TesteParallax } from "@/modules/sections";
 
 export default function HomePage() {
   return (
-    <div className="h-[500vh]">
+    <div>
       <TesteParallax />
+      {/* <BreakPointView /> */}
     </div>
   );
 }

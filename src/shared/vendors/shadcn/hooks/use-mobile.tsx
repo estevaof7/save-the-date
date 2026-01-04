@@ -17,3 +17,17 @@ export function useIsMobile() {
 
   return !!isMobile;
 }
+
+export function useGetWindowWidth() {
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowWidth;
+}

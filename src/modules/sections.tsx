@@ -4,11 +4,14 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-import { MyLine } from "./teste";
+import { MyLine } from "./timeline";
 import { CountDownSection } from "./count-down-section";
+import { useGetWindowWidth } from "@/shared/vendors/shadcn/hooks/use-mobile";
 gsap.registerPlugin(ScrollTrigger);
 
 export const TesteParallax = () => {
+  const windowWidth = useGetWindowWidth();
+
   const section1Ref = useRef<HTMLElement>(null);
   const section2Ref = useRef<HTMLElement>(null);
   const section3Ref = useRef<HTMLElement>(null);
@@ -49,9 +52,11 @@ export const TesteParallax = () => {
   return (
     <>
       <section
-        className="section"
+        className="section lg:bg-cover"
         ref={section1Ref}
-        style={{ backgroundImage: "url(/img/background/pedido-2.png)" }}
+        style={{
+          backgroundImage: "url(/img/background/pedido-4.png)",
+        }}
       >
         <h1 className="text-5xl text-white">Save the date</h1>
       </section>
@@ -59,12 +64,17 @@ export const TesteParallax = () => {
         <div
           className="bg"
           style={{
-            backgroundImage: "url(/img/background/pedido-5.png)",
+            backgroundImage:
+              windowWidth < 1000
+                ? "url(/img/background/pedido-5.png)"
+                : "url(/img/background/pedido-7.png)",
           }}
         ></div>
-        <h1 className="text-white">
-          Antes de salvar a nossa data, dê uma olhada nas datas de nossa história
-        </h1>
+        <div className="mx-auto max-w-[600px]">
+          <h1 className="text-white">
+            Antes de salvar a nossa data, dê uma olhada nas datas de nossa história
+          </h1>
+        </div>
       </section>
       <div>
         {/* <div
