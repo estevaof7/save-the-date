@@ -19,9 +19,13 @@ export function useIsMobile() {
 }
 
 export function useGetWindowWidth() {
-  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = React.useState(0);
 
   React.useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
