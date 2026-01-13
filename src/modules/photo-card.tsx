@@ -10,15 +10,29 @@ interface PhotoCardProps {
   photoWidth: number;
   photoHeight: number;
   position: "left" | "right";
+  descriptionClassName?: string;
 }
 
 export const PhotoCard = forwardRef<HTMLDivElement, PhotoCardProps>(
-  ({ title, image, description, left, top, photoWidth, photoHeight, position }, ref) => {
+  (
+    {
+      title,
+      image,
+      description,
+      left,
+      top,
+      photoWidth,
+      photoHeight,
+      position,
+      descriptionClassName,
+    },
+    ref,
+  ) => {
     return (
       <div
         ref={ref}
         className={`absolute flex flex-col opacity-0 ${position === "left" ? "text-left" : "text-right"}`}
-        style={{ left, top }}
+        style={{ left, top, width: photoWidth }}
       >
         <div
           className="relative overflow-hidden rounded-sm"
@@ -27,7 +41,7 @@ export const PhotoCard = forwardRef<HTMLDivElement, PhotoCardProps>(
           <Image src={image} alt={title} fill className="object-cover" />
         </div>
         <h3 className="mt-2 text-4xl font-bold">{title}</h3>
-        <p>{description}</p>
+        <p className={descriptionClassName}>{description}</p>
       </div>
     );
   },

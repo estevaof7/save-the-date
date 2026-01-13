@@ -7,11 +7,20 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { PhotoCard } from "./photo-card";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, DrawSVGPlugin, MotionPathPlugin);
 gsap.defaults({ ease: "none" });
 
 export const MyLine = () => {
+  const [isVerySmallScreen, setIsVerySmallScreen] = useState(false);
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (timelineRef.current && timelineRef.current.clientWidth) {
+      setIsVerySmallScreen(timelineRef.current.clientWidth < 380);
+    }
+  }, [timelineRef.current?.clientWidth]);
+
   const photoCardRef = useRef<HTMLDivElement>(null);
   const photoCardRef2 = useRef<HTMLDivElement>(null);
   const photoCardRef3 = useRef<HTMLDivElement>(null);
@@ -116,11 +125,11 @@ export const MyLine = () => {
 
   return (
     <div className="overflow-hidden">
-      <div className="width-[390px] relative mx-auto -mt-2 max-w-[390px] overflow-hidden">
+      <div className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden" ref={timelineRef}>
         <PhotoCard
           title="31.01.2024"
           image="/img/cards/bereal-2.png"
-          description="Nossa primeira foto juntos"
+          description="a primeira foto."
           left={150}
           top={150}
           photoWidth={200}
@@ -131,44 +140,45 @@ export const MyLine = () => {
         <PhotoCard
           title="18.08.2024"
           image="/img/cards/caverna.png"
-          description="O interesse começa..."
+          description="as palavras ainda são tímidas, e o futuro é um doce mistério."
           left={30}
           top={760}
-          photoWidth={280}
-          photoHeight={200}
+          photoWidth={isVerySmallScreen ? 250 : 280}
+          photoHeight={isVerySmallScreen ? 180 : 200}
           ref={photoCardRef2}
           position="left"
+          descriptionClassName="w-2/3"
         />
         <PhotoCard
           title="18.08.2024"
           image="/img/cards/vozzuca.png"
-          description="Nosso primiro café juntos"
+          description="o primeiro café."
           left={95}
-          top={1360}
-          photoWidth={280}
-          photoHeight={200}
+          top={isVerySmallScreen ? 1300 : 1360}
+          photoWidth={isVerySmallScreen ? 250 : 280}
+          photoHeight={isVerySmallScreen ? 180 : 200}
           ref={photoCardRef3}
           position="right"
         />
         <PhotoCard
-          title="21.12.2024"
-          image="/img/cards/pedido-namoro.png"
-          description="Pedido de namoro"
+          title="01.12.2024"
+          image="/img/cards/cinema.png"
+          description="o primeiro cinema."
           left={30}
-          top={1900}
-          photoWidth={280}
-          photoHeight={200}
+          top={isVerySmallScreen ? 1850 : 1900}
+          photoWidth={isVerySmallScreen ? 250 : 280}
+          photoHeight={isVerySmallScreen ? 180 : 200}
           ref={photoCardRef4}
           position="left"
         />
         <PhotoCard
-          title="20.07.2025"
-          image="/img/cards/pedido-casamento.png"
-          description="Pedido de casamento"
+          title="21.12.2024"
+          image="/img/cards/pedido-namoro.png"
+          description={`essa história passou na tela do cinema. o primeiro "sim".`}
           left={95}
-          top={2480}
-          photoWidth={280}
-          photoHeight={200}
+          top={isVerySmallScreen ? 2400 : 2480}
+          photoWidth={isVerySmallScreen ? 250 : 280}
+          photoHeight={isVerySmallScreen ? 180 : 200}
           ref={photoCardRef5}
           position="right"
         />
@@ -177,9 +187,9 @@ export const MyLine = () => {
           image="/img/cards/pedido-casamento.png"
           description="Pedido de casamento"
           left={30}
-          top={3050}
-          photoWidth={280}
-          photoHeight={200}
+          top={isVerySmallScreen ? 2950 : 3050}
+          photoWidth={isVerySmallScreen ? 250 : 280}
+          photoHeight={isVerySmallScreen ? 180 : 200}
           ref={photoCardRef6}
           position="left"
         />
