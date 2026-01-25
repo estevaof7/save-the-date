@@ -11,7 +11,7 @@ import { Section1 } from "./section-1";
 import { Section2 } from "./section-2";
 gsap.registerPlugin(ScrollTrigger);
 
-export const TesteParallax = () => {
+export const Sections = () => {
   const windowWidth = useGetWindowWidth();
 
   const section1Ref = useRef<HTMLElement>(null);
@@ -53,9 +53,9 @@ export const TesteParallax = () => {
   }, [section1Ref, section2Ref, section4Ref, section3Ref]);
 
   return (
-    <>
+    <main className="text-[#FFF2CA]">
       <section
-        className="section lg:bg-cover"
+        className="section text-[#FFF2CA] lg:bg-cover"
         ref={section1Ref}
         style={{
           backgroundImage: "url(/img/background/pedido-4.png)",
@@ -68,7 +68,7 @@ export const TesteParallax = () => {
           className="bg"
           style={{
             backgroundImage:
-              windowWidth < 1000
+              windowWidth < 1250
                 ? "url(/img/background/pedido-5.png)"
                 : "url(/img/background/pedido-7.png)",
           }}
@@ -76,7 +76,15 @@ export const TesteParallax = () => {
         <Section2 />
       </section>
       <div className="line-section" ref={section3Ref}>
-        <div className="bg" style={{ backgroundImage: "url(/img/background/FUNDO.png)" }}></div>
+        <div
+          className="bg"
+          style={{
+            backgroundImage:
+              windowWidth < 750
+                ? "url(/img/background/FUNDO.png)"
+                : "url(/img/background/FUNDO-2.png)",
+          }}
+        ></div>
         <MyLine />
       </div>
       <section className="section" ref={section4Ref}>
@@ -88,6 +96,6 @@ export const TesteParallax = () => {
         ></div>
         <CountDownSection />
       </section>
-    </>
+    </main>
   );
 };

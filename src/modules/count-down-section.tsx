@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Countdown from "react-countdown";
 
 export const CountDownSection = () => {
@@ -33,9 +34,19 @@ export const CountDownSection = () => {
 
   return (
     <div className="flex h-full flex-col items-center justify-evenly px-10 text-center">
-      <p className="text-2xl text-white">E mais uma data vai entrar para essa história...</p>
-      <h1 className="text-[60px] text-white">21.06.2026</h1>
-      <h3 className="text-3xl text-white">
+      <div className="flex flex-col items-center gap-5">
+        <div className="w-[70%] max-w-[600px]">
+          <Image
+            src="/img/titles/FRASE3.png"
+            alt="FRASE2"
+            width={2283}
+            height={542}
+            className="object-contain"
+          />
+        </div>
+        <h1 className="font-apple-garamond-bold text-6xl sm:text-7xl xl:text-8xl">21.06.2026</h1>
+      </div>
+      <h3 className="font-bethany text-3xl">
         <Countdown date={new Date(2026, 5, 21)} renderer={renderer} />
       </h3>
     </div>

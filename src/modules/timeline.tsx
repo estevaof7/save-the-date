@@ -134,51 +134,62 @@ export const MyLine = () => {
           photoHeight={250}
           ref={photoCardRef}
           position="right"
+          date="31.01.24"
+          dateClassName="mr-2"
         />
         <PhotoCard
           image="/img/cards/POLAROID-2.png"
           left={30}
-          top={755}
+          top={715}
           photoWidth={isVerySmallScreen ? 250 : 280}
-          photoHeight={isVerySmallScreen ? 180 : 250}
+          photoHeight={isVerySmallScreen ? 220 : 250}
           ref={photoCardRef2}
           position="left"
+          date="18.08.24"
+          dateClassName="ml-2"
         />
         <PhotoCard
           image="/img/cards/POLAROID-3.png"
           left={95}
-          top={isVerySmallScreen ? 1300 : 1300}
+          top={isVerySmallScreen ? 1220 : 1280}
           photoWidth={220}
           photoHeight={270}
           ref={photoCardRef3}
           position="right"
+          date="21.08.24"
         />
         <PhotoCard
           image="/img/cards/POLAROID-4.png"
           left={30}
-          top={isVerySmallScreen ? 1850 : 1870}
+          top={isVerySmallScreen ? 1750 : 1850}
           photoWidth={isVerySmallScreen ? 250 : 250}
-          photoHeight={isVerySmallScreen ? 180 : 250}
+          photoHeight={isVerySmallScreen ? 260 : 250}
           ref={photoCardRef4}
           position="left"
+          date="01.12.24"
+          dateClassName="ml-2"
         />
         <PhotoCard
           image="/img/cards/POLAROID-5.png"
           left={95}
-          top={isVerySmallScreen ? 2400 : 2470}
+          top={isVerySmallScreen ? 2330 : 2440}
           photoWidth={isVerySmallScreen ? 250 : 260}
-          photoHeight={isVerySmallScreen ? 180 : 250}
+          photoHeight={isVerySmallScreen ? 260 : 250}
           ref={photoCardRef5}
           position="right"
+          date="21.12.24"
+          dateClassName="mr-6"
         />
         <PhotoCard
           image="/img/cards/POLAROID-6.png"
           left={30}
-          top={isVerySmallScreen ? 2950 : 3050}
+          top={isVerySmallScreen ? 2880 : 3000}
           photoWidth={isVerySmallScreen ? 250 : 280}
-          photoHeight={isVerySmallScreen ? 180 : 250}
+          photoHeight={isVerySmallScreen ? 220 : 250}
           ref={photoCardRef6}
           position="left"
+          date="20.07.25"
+          dateClassName="ml-6 mb-5"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"

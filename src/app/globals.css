@@ -1,4 +1,4 @@
-@import url("/fonts/BlinkMacSystemFont/stylesheet.css");
+@import url("@public/fonts/BlinkMacSystemFont/stylesheet.css");
 
 @tailwind base;
 @tailwind components;
@@ -6,14 +6,14 @@
 
 @font-face {
   font-family: "Bethany Elingston";
-  src: url("/fonts/Bethany Elingston.otf") format("truetype");
+  src: url("@public/fonts/Bethany Elingston.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AppleGaramond-Bold";
-  src: url("/fonts/AppleGaramond-Bold.ttf") format("truetype");
+  src: url("@public/fonts/AppleGaramond-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -406,5 +406,8 @@ h1 {
 
 .font-bethany {
   font-family: "Bethany Elingston";
-  /* font-family: "AppleGaramond-Bold"; */
+}
+
+.font-apple-garamond-bold {
+  font-family: "AppleGaramond-Bold";
 }

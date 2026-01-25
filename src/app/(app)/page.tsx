@@ -1,10 +1,5 @@
-import { TesteParallax } from "@/modules/sections";
+import { View } from "@/modules/view";
 
 export default function HomePage() {
-  return (
-    <div>
-      <TesteParallax />
-      {/* <BreakPointView /> */}
-    </div>
-  );
+  return <View />;
 }
