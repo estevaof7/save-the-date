@@ -127,9 +127,7 @@ export const MyLine = () => {
     <div className="overflow-hidden">
       <div className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden" ref={timelineRef}>
         <PhotoCard
-          title="31.01.2024"
-          image="/img/cards/bereal-2.png"
-          description="a primeira foto."
+          image="/img/cards/POLAROID-1.png"
           left={150}
           top={150}
           photoWidth={200}
@@ -138,58 +136,47 @@ export const MyLine = () => {
           position="right"
         />
         <PhotoCard
-          title="18.08.2024"
-          image="/img/cards/caverna.png"
-          description="as palavras ainda são tímidas, e o futuro é um doce mistério."
+          image="/img/cards/POLAROID-2.png"
           left={30}
-          top={760}
+          top={755}
           photoWidth={isVerySmallScreen ? 250 : 280}
-          photoHeight={isVerySmallScreen ? 180 : 200}
+          photoHeight={isVerySmallScreen ? 180 : 250}
           ref={photoCardRef2}
           position="left"
-          descriptionClassName="w-2/3"
         />
         <PhotoCard
-          title="18.08.2024"
-          image="/img/cards/vozzuca.png"
-          description="o primeiro café."
+          image="/img/cards/POLAROID-3.png"
           left={95}
-          top={isVerySmallScreen ? 1300 : 1360}
-          photoWidth={isVerySmallScreen ? 250 : 280}
-          photoHeight={isVerySmallScreen ? 180 : 200}
+          top={isVerySmallScreen ? 1300 : 1300}
+          photoWidth={220}
+          photoHeight={270}
           ref={photoCardRef3}
           position="right"
         />
         <PhotoCard
-          title="01.12.2024"
-          image="/img/cards/cinema.png"
-          description="o primeiro cinema."
+          image="/img/cards/POLAROID-4.png"
           left={30}
-          top={isVerySmallScreen ? 1850 : 1900}
-          photoWidth={isVerySmallScreen ? 250 : 280}
-          photoHeight={isVerySmallScreen ? 180 : 200}
+          top={isVerySmallScreen ? 1850 : 1870}
+          photoWidth={isVerySmallScreen ? 250 : 250}
+          photoHeight={isVerySmallScreen ? 180 : 250}
           ref={photoCardRef4}
           position="left"
         />
         <PhotoCard
-          title="21.12.2024"
-          image="/img/cards/pedido-namoro.png"
-          description={`essa história passou na tela do cinema. o primeiro "sim".`}
+          image="/img/cards/POLAROID-5.png"
           left={95}
-          top={isVerySmallScreen ? 2400 : 2480}
-          photoWidth={isVerySmallScreen ? 250 : 280}
-          photoHeight={isVerySmallScreen ? 180 : 200}
+          top={isVerySmallScreen ? 2400 : 2470}
+          photoWidth={isVerySmallScreen ? 250 : 260}
+          photoHeight={isVerySmallScreen ? 180 : 250}
           ref={photoCardRef5}
           position="right"
         />
         <PhotoCard
-          title="20.07.2025"
-          image="/img/cards/pedido-casamento.png"
-          description="Pedido de casamento"
+          image="/img/cards/POLAROID-6.png"
           left={30}
           top={isVerySmallScreen ? 2950 : 3050}
           photoWidth={isVerySmallScreen ? 250 : 280}
-          photoHeight={isVerySmallScreen ? 180 : 200}
+          photoHeight={isVerySmallScreen ? 180 : 250}
           ref={photoCardRef6}
           position="left"
         />
@@ -206,44 +193,44 @@ export const MyLine = () => {
           <path
             className="line01 line"
             d="M 100 530 300 530"
-            fill="#000"
+            fill="#FFF2CA"
             strokeWidth="2px"
-            stroke="black"
+            stroke="#FFF2CA"
           />
           <path
             className="line02 line"
             d="M 530 1550 300 1550"
-            fill="#000"
+            fill="#FFF2CA"
             strokeWidth="2px"
-            stroke="black"
+            stroke="#FFF2CA"
           ></path>
           <path
             className="line03 line"
             d="M 100 2600 300 2600"
-            fill="#000"
+            fill="#FFF2CA"
             strokeWidth="2px"
-            stroke="black"
+            stroke="#FFF2CA"
           />
           <path
             className="line04 line"
             d="M 530 3600 300 3600"
-            fill="#000"
+            fill="#FFF2CA"
             strokeWidth="2px"
-            stroke="black"
+            stroke="#FFF2CA"
           />
           <path
             className="line05 line"
             d="M 100 4630 300 4630"
-            fill="#000"
+            fill="#FFF2CA"
             strokeWidth="2px"
-            stroke="black"
+            stroke="#FFF2CA"
           />
           <path
             className="line06 line"
             d="M 530 5660 300 5660"
-            fill="#000"
+            fill="#FFF2CA"
             strokeWidth="2px"
-            stroke="black"
+            stroke="#FFF2CA"
           />
           <text x="30" y="190">
             2018
@@ -255,28 +242,6 @@ export const MyLine = () => {
             2020
           </text>
 
-          {/* <path
-            d="M283.642 0.685547
-     C95.34 200.722 1.1035 356.814 1 512.908
-     C0.896848 669.002 94.9266 825.265 283.642 1025.65
-     C471.293 1225.92 565.175 1382.33 565.142 1538.81
-     C565.108 1695.3 471.161 1851.7 283.64 2051.97
-     C95.3497 2252.51 1.43012 2408.79 1.48242 2564.86
-     C1.53494 2720.93 95.5593 2876.95 283.642 3076.94
-     C471.069 3277.22 564.89 3433.62 564.885 3590.1
-     C564.879 3746.59 471.046 3902.99 283.644 4103.27
-     C94.8973 4303.46 1.05212 4459.66 1.25488 4615.77
-     C1.45791 4771.88 95.7089 4928.07 283.642 5128.23
-     C470.056 5328.13 564.659 5484.81 565.298 5641.53
-     C565.937 5798.25 472.608 5954.84 283.641 6154.56
-     C95.2024 6355 1.07131 6511.19 1.05469 6667.24
-     C1.03845 6823.28 95.1364 6979.34 283.642 7179.52"
-            fill="none"
-            stroke="#000"
-            strokeWidth="10"
-            transform="translate(50,0)"
-            className="theLine"
-          /> */}
           <path
             d="M283.642 0.685547
      C95.34 200.722 1.1035 356.814 1 512.908
@@ -292,19 +257,19 @@ export const MyLine = () => {
      C470.056 5328.13 564.659 5484.81 565.298 5641.53
      C565.937 5798.25 472.608 5954.84 283.641 6154.56"
             fill="none"
-            stroke="#000"
+            stroke="#FFF2CA"
             strokeWidth="10"
             transform="translate(50,0)"
             className="theLine"
           />
 
-          <circle className="ball ball01" r="20" cx="50" cy="531" fill="#000"></circle>
-          <circle className="ball ball02" r="20" cx="50" cy="531" fill="#000"></circle>
-          <circle className="ball ball03" r="20" cx="612" cy="1551" fill="#000"></circle>
-          <circle className="ball ball04" r="20" cx="52" cy="2601" fill="#000"></circle>
-          <circle className="ball ball05" r="20" cx="612" cy="3601" fill="#000"></circle>
-          <circle className="ball ball06" r="20" cx="50" cy="4631" fill="#000"></circle>
-          <circle className="ball ball07" r="20" cx="612" cy="5661" fill="#000"></circle>
+          <circle className="ball ball01" r="20" cx="50" cy="531" fill="#FFF2CA"></circle>
+          <circle className="ball ball02" r="20" cx="50" cy="531" fill="#FFF2CA"></circle>
+          <circle className="ball ball03" r="20" cx="612" cy="1551" fill="#FFF2CA"></circle>
+          <circle className="ball ball04" r="20" cx="52" cy="2601" fill="#FFF2CA"></circle>
+          <circle className="ball ball05" r="20" cx="612" cy="3601" fill="#FFF2CA"></circle>
+          <circle className="ball ball06" r="20" cx="50" cy="4631" fill="#FFF2CA"></circle>
+          <circle className="ball ball07" r="20" cx="612" cy="5661" fill="#FFF2CA"></circle>
         </svg>
       </div>
     </div>
@@ -454,12 +419,12 @@ export const SvgWithBiggerLine = () => {
 
       quando maior o terceito número, menor o svg
       */}
-        <path d="M 10 1000 600 1000" fill="#000" strokeWidth="2px" stroke="#000"></path>
-        <path d="M 10 1800 600 1800" fill="#000" strokeWidth="2px" stroke="#000"></path>
-        <path d="M 10 2600 600 2600" fill="#000" strokeWidth="2px" stroke="#000"></path>
-        <path d="M 10 3400 600 3400" fill="#000" strokeWidth="2px" stroke="#000"></path>
-        <path d="M 10 4200 600 4200" fill="#000" strokeWidth="2px" stroke="#000"></path>
-        <path d="M 10 5000 600 5000" fill="#000" strokeWidth="2px" stroke="#000"></path>
+        <path d="M 10 1000 600 1000" fill="#FFF2CA" strokeWidth="2px" stroke="#FFF2CA"></path>
+        <path d="M 10 1800 600 1800" fill="#FFF2CA" strokeWidth="2px" stroke="#FFF2CA"></path>
+        <path d="M 10 2600 600 2600" fill="#FFF2CA" strokeWidth="2px" stroke="#FFF2CA"></path>
+        <path d="M 10 3400 600 3400" fill="#FFF2CA" strokeWidth="2px" stroke="#FFF2CA"></path>
+        <path d="M 10 4200 600 4200" fill="#FFF2CA" strokeWidth="2px" stroke="#FFF2CA"></path>
+        <path d="M 10 5000 600 5000" fill="#FFF2CA" strokeWidth="2px" stroke="#FFF2CA"></path>
         <text x="30" y="190">
           2018
         </text>
@@ -478,17 +443,17 @@ export const SvgWithBiggerLine = () => {
                 Q 100 5100 300 6000
                 T 150 7200"
           fill="none"
-          stroke="#000"
+          stroke="#FFF2CA"
           strokeWidth="10px"
           transform="translate(-80,0)"
         />
 
-        <circle className="ball ball01" r="20" cx="168" cy="1001" fill="#000"></circle>
-        <circle className="ball ball02" r="20" cx="252" cy="1801" fill="#000"></circle>
-        <circle className="ball ball03" r="20" cx="230" cy="2601" fill="#000"></circle>
-        <circle className="ball ball04" r="20" cx="143" cy="3401" fill="#000"></circle>
-        <circle className="ball ball05" r="20" cx="68" cy="4201" fill="#000"></circle>
-        <circle className="ball ball06" r="20" cx="60" cy="5001" fill="#000"></circle>
+        <circle className="ball ball01" r="20" cx="168" cy="1001" fill="#FFF2CA"></circle>
+        <circle className="ball ball02" r="20" cx="252" cy="1801" fill="#FFF2CA"></circle>
+        <circle className="ball ball03" r="20" cx="230" cy="2601" fill="#FFF2CA"></circle>
+        <circle className="ball ball04" r="20" cx="143" cy="3401" fill="#FFF2CA"></circle>
+        <circle className="ball ball05" r="20" cx="68" cy="4201" fill="#FFF2CA"></circle>
+        <circle className="ball ball06" r="20" cx="60" cy="5001" fill="#FFF2CA"></circle>
       </svg>
     </div>
   );

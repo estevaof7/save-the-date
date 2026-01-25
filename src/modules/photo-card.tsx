@@ -2,32 +2,16 @@ import Image from "next/image";
 import { forwardRef } from "react";
 
 interface PhotoCardProps {
-  title: string;
   image: string;
-  description: string;
   left: number;
   top: number;
   photoWidth: number;
   photoHeight: number;
   position: "left" | "right";
-  descriptionClassName?: string;
 }
 
 export const PhotoCard = forwardRef<HTMLDivElement, PhotoCardProps>(
-  (
-    {
-      title,
-      image,
-      description,
-      left,
-      top,
-      photoWidth,
-      photoHeight,
-      position,
-      descriptionClassName,
-    },
-    ref,
-  ) => {
+  ({ image, left, top, photoWidth, photoHeight, position }, ref) => {
     return (
       <div
         ref={ref}
@@ -38,10 +22,8 @@ export const PhotoCard = forwardRef<HTMLDivElement, PhotoCardProps>(
           className="relative overflow-hidden rounded-sm"
           style={{ width: photoWidth, height: photoHeight }}
         >
-          <Image src={image} alt={title} fill className="object-cover" />
+          <Image src={image} alt="Photo" fill className="object-cover" />
         </div>
-        <h3 className="mt-2 text-4xl font-bold">{title}</h3>
-        <p className={descriptionClassName}>{description}</p>
       </div>
     );
   },
