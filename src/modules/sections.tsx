@@ -76,7 +76,7 @@ export const Sections = () => {
             backgroundImage:
               windowWidth < 1250
                 ? "url(/img/background/pedido-5.png)"
-                : "url(/img/background/pedido-7.png)",
+                : "url(/img/background/pedido-7.jpeg)",
           }}
         ></div>
         <Section2 />
