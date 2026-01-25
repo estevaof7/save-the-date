@@ -5,10 +5,6 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Save the date",
   manifest: "/manifest.json",
-  // icons: {
-  //   icon: [{ url: "/favicon.ico" }, { url: "/icon0.svg" }, { url: "/icon1.png" }],
-  //   apple: "/apple-icon.png",
-  // },
 };
 
 export default function RootLayout({

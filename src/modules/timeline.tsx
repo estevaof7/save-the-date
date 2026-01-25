@@ -14,6 +14,7 @@ gsap.defaults({ ease: "none" });
 export const MyLine = () => {
   const [isVerySmallScreen, setIsVerySmallScreen] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (timelineRef.current && timelineRef.current.clientWidth) {
@@ -124,8 +125,13 @@ export const MyLine = () => {
   });
 
   return (
-    <div className="overflow-hidden">
-      <div className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden" ref={timelineRef}>
+    <div className="overflow-hidden" ref={containerRef}>
+      <div
+        className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden xl:mt-[60rem] xl:min-h-[430vh] xl:scale-150"
+        // className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden"
+        // className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden xl:mt-[50rem] xl:scale-150"
+        ref={timelineRef}
+      >
         <PhotoCard
           image="/img/cards/POLAROID-1.png"
           left={150}

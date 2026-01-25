@@ -44,7 +44,12 @@ export const CountDownSection = () => {
             className="object-contain"
           />
         </div>
-        <h1 className="font-apple-garamond-bold text-6xl sm:text-7xl xl:text-8xl">21.06.2026</h1>
+        <div>
+          <h1 className="font-apple-garamond-bold text-[4rem] sm:text-7xl xl:text-8xl">
+            21.06.2026
+          </h1>
+          <p className="font-bethany text-lg">Chácara Flamboyant, Uberlândia - MG</p>
+        </div>
       </div>
       <h3 className="font-bethany text-3xl">
         <Countdown date={new Date(2026, 5, 21)} renderer={renderer} />

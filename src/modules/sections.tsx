@@ -3,17 +3,17 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MyLine } from "./timeline";
 import { CountDownSection } from "./count-down-section";
-import { useGetWindowWidth } from "@/shared/vendors/shadcn/hooks/use-mobile";
 import { Section1 } from "./section-1";
 import { Section2 } from "./section-2";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Sections = () => {
-  const windowWidth = useGetWindowWidth();
+  const [windowWidth, setWindowWidth] = useState(0);
 
+  const mainRef = useRef<HTMLDivElement>(null);
   const section1Ref = useRef<HTMLElement>(null);
   const section2Ref = useRef<HTMLElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
@@ -52,10 +52,16 @@ export const Sections = () => {
     });
   }, [section1Ref, section2Ref, section4Ref, section3Ref]);
 
+  useEffect(() => {
+    if (mainRef.current && mainRef.current.clientWidth) {
+      setWindowWidth(mainRef.current.clientWidth);
+    }
+  }, [mainRef.current?.clientWidth]);
+
   return (
-    <main className="text-[#FFF2CA]">
+    <main className="text-[#FFF2CA]" ref={mainRef}>
       <section
-        className="section text-[#FFF2CA] lg:bg-cover"
+        className="section lg:bg-cover"
         ref={section1Ref}
         style={{
           backgroundImage: "url(/img/background/pedido-4.png)",
@@ -75,7 +81,7 @@ export const Sections = () => {
         ></div>
         <Section2 />
       </section>
-      <div className="line-section" ref={section3Ref}>
+      <div className="relative" ref={section3Ref}>
         <div
           className="bg"
           style={{
