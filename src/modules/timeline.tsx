@@ -130,7 +130,6 @@ export const MyLine = () => {
 
   return (
     <div className="overflow-hidden" ref={containerRef}>
-      <p>width: {timelineRef.current?.clientWidth}</p>
       <div
         className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden xl:mt-[60rem] xl:min-h-[254rem] xl:scale-150"
         ref={timelineRef}
