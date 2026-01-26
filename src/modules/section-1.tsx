@@ -5,7 +5,7 @@ export const Section1 = () => {
     <div className="flex h-full w-full items-center justify-center">
       <div className="grid h-[80%] w-4/5 max-w-[700px] grid-rows-[1fr_1fr_1fr] md:h-[90%]">
         <div className="flex w-full justify-center">
-          <div className="h-auto w-[70%] md:flex md:items-center">
+          <div className="relative h-auto w-[70%] md:flex md:items-center">
             <Image
               src="/img/titles/SAVE-THE-DATE.png"
               alt="Save the date title"

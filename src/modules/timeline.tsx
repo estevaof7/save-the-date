@@ -15,12 +15,16 @@ export const MyLine = () => {
   const [isVerySmallScreen, setIsVerySmallScreen] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
     if (timelineRef.current && timelineRef.current.clientWidth) {
       setIsVerySmallScreen(timelineRef.current.clientWidth < 380);
     }
-  }, [timelineRef.current?.clientWidth]);
+    if (timelineRef.current && timelineRef.current.clientHeight) {
+      setHeight(timelineRef.current.clientHeight);
+    }
+  }, [timelineRef.current?.clientWidth, timelineRef.current?.clientHeight]);
 
   const photoCardRef = useRef<HTMLDivElement>(null);
   const photoCardRef2 = useRef<HTMLDivElement>(null);
@@ -126,6 +130,8 @@ export const MyLine = () => {
 
   return (
     <div className="overflow-hidden" ref={containerRef}>
+      {/* <p>Height: {height}</p>
+      <p>timelineRef.current?.clientWidth: {timelineRef.current?.clientWidth}</p> */}
       <div
         className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden xl:mt-[60rem] xl:min-h-[430vh] xl:scale-150"
         // className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden"
@@ -146,7 +152,7 @@ export const MyLine = () => {
         <PhotoCard
           image="/img/cards/POLAROID-2.png"
           left={30}
-          top={715}
+          top={isVerySmallScreen && Boolean(height) ? height / 4.7 : 715}
           photoWidth={isVerySmallScreen ? 250 : 280}
           photoHeight={isVerySmallScreen ? 220 : 250}
           ref={photoCardRef2}
@@ -157,7 +163,7 @@ export const MyLine = () => {
         <PhotoCard
           image="/img/cards/POLAROID-3.png"
           left={95}
-          top={isVerySmallScreen ? 1220 : 1280}
+          top={isVerySmallScreen && Boolean(height) ? height / 2.7 : 1280}
           photoWidth={220}
           photoHeight={270}
           ref={photoCardRef3}
@@ -167,7 +173,7 @@ export const MyLine = () => {
         <PhotoCard
           image="/img/cards/POLAROID-4.png"
           left={30}
-          top={isVerySmallScreen ? 1750 : 1850}
+          top={isVerySmallScreen && Boolean(height) ? height / 1.87 : 1850}
           photoWidth={isVerySmallScreen ? 250 : 250}
           photoHeight={isVerySmallScreen ? 260 : 250}
           ref={photoCardRef4}
@@ -178,7 +184,7 @@ export const MyLine = () => {
         <PhotoCard
           image="/img/cards/POLAROID-5.png"
           left={95}
-          top={isVerySmallScreen ? 2330 : 2440}
+          top={isVerySmallScreen && Boolean(height) ? height / 1.41 : 2440}
           photoWidth={isVerySmallScreen ? 250 : 260}
           photoHeight={isVerySmallScreen ? 260 : 250}
           ref={photoCardRef5}
@@ -189,7 +195,7 @@ export const MyLine = () => {
         <PhotoCard
           image="/img/cards/POLAROID-6.png"
           left={30}
-          top={isVerySmallScreen ? 2880 : 3000}
+          top={isVerySmallScreen && Boolean(height) ? height / 1.14 : 3000}
           photoWidth={isVerySmallScreen ? 250 : 280}
           photoHeight={isVerySmallScreen ? 220 : 250}
           ref={photoCardRef6}

@@ -19,7 +19,12 @@ export function useIsMobile() {
 }
 
 export function useGetWindowWidth() {
-  const [windowWidth, setWindowWidth] = React.useState(0);
+  const [windowWidth, setWindowWidth] = React.useState(() => {
+    if (typeof window === "undefined") {
+      return 0;
+    }
+    return window.innerWidth;
+  });
 
   React.useEffect(() => {
     if (typeof window === "undefined") {
@@ -29,6 +34,10 @@ export function useGetWindowWidth() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
+
+    // Define o valor inicial imediatamente
+    setWindowWidth(window.innerWidth);
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

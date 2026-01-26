@@ -4,20 +4,23 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
+import { useGetWindowWidth } from "@/shared/vendors/shadcn/hooks/use-mobile";
 import { MyLine } from "./timeline";
 import { CountDownSection } from "./count-down-section";
 import { Section1 } from "./section-1";
 import { Section2 } from "./section-2";
+import { useImagesLoaded2 } from "@/shared/vendors/shadcn/hooks/use-images-loaded";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Sections = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
+  const windowWidth = useGetWindowWidth();
+  const [mainWidth, setMainWidth] = useState(0);
 
-  const mainRef = useRef<HTMLDivElement>(null);
   const section1Ref = useRef<HTMLElement>(null);
   const section2Ref = useRef<HTMLElement>(null);
   const section3Ref = useRef<HTMLDivElement>(null);
   const section4Ref = useRef<HTMLElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   const getRatio = (el: HTMLElement) => window.innerHeight / (window.innerHeight + el.offsetHeight);
 
@@ -54,12 +57,22 @@ export const Sections = () => {
 
   useEffect(() => {
     if (mainRef.current && mainRef.current.clientWidth) {
-      setWindowWidth(mainRef.current.clientWidth);
+      setMainWidth(mainRef.current.clientWidth);
     }
   }, [mainRef.current?.clientWidth]);
 
+  const { isLoading } = useImagesLoaded2({
+    container: mainRef.current,
+    includeBackgroundImages: true,
+  });
+
   return (
     <main className="text-[#FFF2CA]" ref={mainRef}>
+      {!isLoading && (
+        <div className="font-bethany fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-[#FFF2CA]">
+          <h1 className="text-black/80">Carregando data...</h1>
+        </div>
+      )}
       <section
         className="section lg:bg-cover"
         ref={section1Ref}
@@ -74,7 +87,7 @@ export const Sections = () => {
           className="bg"
           style={{
             backgroundImage:
-              windowWidth < 1250
+              windowWidth < 1250 || mainWidth < 1250
                 ? "url(/img/background/pedido-5.png)"
                 : "url(/img/background/pedido-7.jpeg)",
           }}
@@ -86,7 +99,7 @@ export const Sections = () => {
           className="bg"
           style={{
             backgroundImage:
-              windowWidth < 750
+              windowWidth < 750 || mainWidth < 750
                 ? "url(/img/background/FUNDO.png)"
                 : "url(/img/background/FUNDO-2.png)",
           }}
