@@ -130,12 +130,8 @@ export const MyLine = () => {
 
   return (
     <div className="overflow-hidden" ref={containerRef}>
-      {/* <p>Height: {height}</p>
-      <p>timelineRef.current?.clientWidth: {timelineRef.current?.clientWidth}</p> */}
       <div
-        className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden xl:mt-[60rem] xl:min-h-[430vh] xl:scale-150"
-        // className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden"
-        // className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden xl:mt-[50rem] xl:scale-150"
+        className="relative mx-auto -mt-2 max-w-[390px] overflow-hidden xl:mt-[60rem] xl:min-h-[254rem] xl:scale-150"
         ref={timelineRef}
       >
         <PhotoCard
