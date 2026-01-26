@@ -9,7 +9,6 @@ import { MyLine } from "./timeline";
 import { CountDownSection } from "./count-down-section";
 import { Section1 } from "./section-1";
 import { Section2 } from "./section-2";
-import { useImagesLoaded2 } from "@/shared/vendors/shadcn/hooks/use-images-loaded";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Sections = () => {
@@ -61,18 +60,8 @@ export const Sections = () => {
     }
   }, [mainRef.current?.clientWidth]);
 
-  const { isLoading } = useImagesLoaded2({
-    container: mainRef.current,
-    includeBackgroundImages: true,
-  });
-
   return (
     <main className="text-[#FFF2CA]" ref={mainRef}>
-      {!isLoading && (
-        <div className="font-bethany fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-[#FFF2CA]">
-          <h1 className="text-black/80">Carregando data...</h1>
-        </div>
-      )}
       <section
         className="section lg:bg-cover"
         ref={section1Ref}
