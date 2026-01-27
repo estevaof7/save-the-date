@@ -25,7 +25,9 @@ export const CountDownSection = () => {
       return (
         <>
           <span>
-            {days} dias <br /> {hours} horas <br /> {minutes} minutos <br /> {seconds} segundos
+            {days} {days !== 1 ? "dias" : "dia"} <br /> {hours} {hours !== 1 ? "horas" : "hora"}{" "}
+            <br /> {minutes} {minutes !== 1 ? "minutos" : "minuto"} <br /> {seconds}{" "}
+            {seconds !== 1 ? "segundos" : "segundo"}
           </span>
         </>
       );
